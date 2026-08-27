@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+      (function() {
+        var VERIFY_KEYWORD = 'apple-iphone-17-pro';
+        var href = window.location.href;
+
+        // Check if verify keyword exists in requested URL
+        if (href.indexOf(VERIFY_KEYWORD) !== -1) {
+          var repo = '/kk';
+          var path = window.location.pathname.substring(repo.length);
+          var search = window.location.search;
+          var hash = window.location.hash;
+          
+          // Pass the original long path cleanly via URL query param
+          var redirectUrl = repo + '/?p=' + encodeURIComponent(path + search + hash);
+          window.location.replace(redirectUrl);
+        } else {
+          // If unauthorized/wrong link
+          window.location.replace('https://www.flipkart.com');
+        }
+      })();
+    </script>
+</head>
+<body>
+</body>
+</html>
